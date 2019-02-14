@@ -44,7 +44,8 @@ if ( ! function_exists( 'jptheme_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'jptheme' ),
+			'header-menu' => esc_html__( 'Header Menu', 'jptheme' ),
+			'secondary' => esc_html__( 'Secondary', 'jptheme' ),
 		) );
 
 		/*
@@ -74,8 +75,8 @@ if ( ! function_exists( 'jptheme_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 100,
+			'width'       => 100,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
