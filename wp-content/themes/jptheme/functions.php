@@ -46,6 +46,7 @@ if ( ! function_exists( 'jptheme_setup' ) ) :
 		register_nav_menus( array(
 			'header-menu' => esc_html__( 'Header Menu', 'jptheme' ),
 			'secondary' => esc_html__( 'Secondary', 'jptheme' ),
+			'footer-menu' => esc_html__( 'Footer Menu' , 'jptheme'),
 		) );
 
 		/*

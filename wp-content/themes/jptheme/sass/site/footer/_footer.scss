@@ -1,0 +1,22 @@
+.site-info {
+  height: 150px;
+  width: 100%;
+  background: $color__primary;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+ul#footer-menu {
+  list-style-type: none;
+  padding-top: 35px;
+  li {
+    display: inline-block;
+    padding-right: 20px;
+  }
+}
+
+.site-info__desc {
+  padding-bottom: 10px;
+}
