@@ -62,7 +62,7 @@ if ( ! function_exists( 'jptheme_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'jptheme' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'jptheme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Filed in %1$s', 'jptheme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
@@ -110,6 +110,14 @@ if ( ! function_exists( 'jptheme_entry_footer' ) ) :
 		);
 	}
 endif;
+
+function jptheme_the_category_list() {
+	$categories_list = get_the_category_list( esc_html__( ', ', 'jptheme' ) );
+	if ( $categories_list ) {
+		/* translators: 1: list of categories. */
+		printf( '<span class="cat-links">' . esc_html__( '%1$s', 'jptheme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+	}
+}
 
 if ( ! function_exists( 'jptheme_post_thumbnail' ) ) :
 	/**
