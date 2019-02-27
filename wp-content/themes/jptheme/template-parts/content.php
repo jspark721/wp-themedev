@@ -24,7 +24,7 @@
 			<div class="entry-meta">
 				<?php
 				jptheme_posted_on();
-				jptheme_posted_by();
+				// jptheme_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

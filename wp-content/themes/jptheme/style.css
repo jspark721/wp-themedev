@@ -387,14 +387,50 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: "Source Sans Pro", "Helvetica Neue", "Lucida Sans", "Arial", sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 14.4px;
+	font-size: 0.9rem;
 	line-height: 1.5;
+}
+
+@media screen and (min-width: 700px) {
+	body,
+	button,
+	input,
+	select,
+	optgroup,
+	textarea {
+		font-size: 16px;
+		font-size: 1rem;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: "Nunito Sans", "Helvetica", "Lucida Grande", "Arial", sans-serif;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.6em;
+}
+
+h3 {
+	font-size: 2.2em;
+}
+
+h4 {
+	font-size: 2em;
+}
+
+h5 {
+	font-size: 1.8em;
+}
+
+h6 {
+	font-size: 1.5em;
 }
 
 p {
@@ -505,7 +541,7 @@ img {
 }
 
 figure {
-	margin: 1em 0;
+	margin: 0;
 	/* Extra wide images within figure tags don't overflow the content area. */
 }
 
@@ -526,24 +562,20 @@ input[type="submit"] {
 	border-radius: 3px;
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, 0.8);
-	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 16px;
+	font-size: 1rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .5em 1 em;
 }
 
-button:hover,
+button:hover, button:active, button:focus,
 input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-}
-
-button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
+input[type="reset"]:hover,
 input[type="reset"]:active,
 input[type="reset"]:focus,
+input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
 	border-color: #aaa #bbb #bbb;
@@ -565,7 +597,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
+	color: #667;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	padding: 3px;
@@ -605,15 +637,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #91A7D0;
 }
 
 a:visited {
-	color: purple;
+	color: #91A7D0;
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #F6CAC9;
 }
 
 a:focus {
@@ -625,95 +657,104 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-## Menus
+## Content Navigation
 --------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
+.comment-navigation,
+.posts-navigation,
+.post-navigation,
+.paging-navigation {
+	padding: 2em 0;
+	font-family: "Source Sans Pro", "Helvetica Neue", "Lucida Sans", "Arial", sans-serif;
+	text-align: left;
 	overflow: hidden;
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+.comment-navigation a,
+.posts-navigation a,
+.post-navigation a,
+.paging-navigation a {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	padding: 1em;
+	border: 1px solid #F0EEE9;
+	color: #615E5F;
 }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+.comment-navigation a:hover, .comment-navigation a:focus,
+.posts-navigation a:hover,
+.posts-navigation a:focus,
+.post-navigation a:hover,
+.post-navigation a:focus,
+.paging-navigation a:hover,
+.paging-navigation a:focus {
+	color: white;
+	border-color: #91A7D0;
+	background: #91A7D0;
+}
+
+.nav-links {
+	margin: 0 auto;
+	padding: 0 .4em;
+}
+
+.nav-previous {
+	padding-bottom: 1em;
+}
+
+@media screen and (min-width: 900px) {
+	.nav-links {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: justify;
+		    justify-content: space-between;
+		-ms-flex-align: stretch;
+		    align-items: stretch;
+		padding: 0;
+	}
+	.comment-navigation .nav-previous,
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-previous,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-previous,
+	.post-navigation .nav-next {
+		float: left;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: stretch;
+		    align-items: stretch;
+		width: 48%;
+	}
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: right;
+		text-align: right;
+	}
+	.nav-previous {
+		padding-bottom: 0;
+	}
+}
+
+.post-navigation .meta-nav {
+	display: block;
+}
+
+@media screen and (min-width: 30em) {
+	.post-navigation {
+		padding-bottom: 1.5em;
+	}
+}
+
+.post-navigation .post-title {
+	font-size: 1.2em;
+	font-weight: 700;
+	border-bottom: 3px solid #F6CAC9;
+}
+
+.post-navigation a:hover .post-title,
+.post-navigation a:focus .post-title {
+	border-bottom-color: white;
 }
 
 /*--------------------------------------------------------------
@@ -815,25 +856,456 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-# Widgets
+# Content
 --------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-	/* Make sure select elements fit in widgets. */
+/*--------------------------------------------------------------
+## Global layouts
+--------------------------------------------------------------*/
+.site-content {
+	padding: 1.5em;
 }
 
-.widget select {
-	max-width: 100%;
+@media screen and (min-width: 600px) {
+	.site-content {
+		padding: 2.5em;
+	}
 }
 
 /*--------------------------------------------------------------
-# Content
+## Header
 --------------------------------------------------------------*/
+.header-image {
+	max-height: 60vh;
+	overflow: hidden;
+}
+
+.header-image img {
+	display: block;
+	width: 100vw;
+}
+
+.site-header {
+	position: relative;
+	padding: 1em;
+	font-family: "Source Sans Pro", "Helvetica Neue", "Lucida Sans", "Arial", sans-serif;
+	color: #615E5F;
+	background-color: #91A7D0;
+}
+
+@media screen and (min-width: 600px) {
+	.site-header {
+		padding: 1em 2em;
+	}
+}
+
+.site-branding {
+	min-height: 65px;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.custom-logo-link {
+	margin-right: 1em;
+}
+
+.custom-logo-link img {
+	display: block;
+	height: 65px;
+	width: auto;
+}
+
+.site-branding__text {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	height: 65px;
+}
+
+.site-title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.6em;
+	font-weight: 900;
+	line-height: 1em;
+}
+
+.site-title a {
+	color: white;
+	text-decoration: none;
+}
+
+.site-title a:hover, .site-title a:focus {
+	text-decoration: underline;
+}
+
+.site-description {
+	margin: 0;
+	font-size: .9em;
+	font-style: italic;
+	font-weight: 100;
+}
+
+@media screen and (min-width: 900px) {
+	.site-header {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: justify;
+		    justify-content: space-between;
+	}
+	.site-branding {
+		width: 35%;
+		-ms-flex: 1 0 auto;
+		    flex: 1 0 auto;
+	}
+	.site-navigation {
+		width: 55%;
+	}
+}
+
+/* header menu */
+.main-navigation {
+	display: block;
+	font-family: sans-serif;
+	font-weight: 400;
+	clear: left;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-top: 1em;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	display: none;
+	top: 1.5em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	top: 0;
+}
+
+.main-navigation ul ul li {
+	padding-left: 1em;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: inline-block;
+	width: 100%;
+	padding: .5em 1em .5em 0;
+	text-decoration: none;
+	color: #fff;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	text-decoration: underline;
+}
+
+.main-navigation .menu-item-has-children,
+.main-navigation .page_item_has_children {
+	min-width: 218px;
+}
+
+.main-navigation .menu-item-has-children > a,
+.main-navigation .page_item_has_children > a {
+	padding-right: 2em;
+}
+
+button.dropdown-toggle {
+	position: absolute;
+	right: 0;
+	border: none;
+	background: inherit;
+	color: white;
+	line-height: 1em;
+	padding: .5em 1em;
+}
+
+button.dropdown-toggle span {
+	font-weight: 700;
+	font-size: 1.3em;
+	opacity: .7;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	margin: 1.2em 1.2em 0 0;
+	padding: .6em .8em;
+	font-size: 80%;
+	text-transform: uppercase;
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Toggle small menu and children on */
+.toggled-on ul,
+.children.toggled-on,
+.sub-menu.toggled-on {
+	display: block;
+}
+
+@media screen and (min-width: 600px) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation .menu-item-has-children > a,
+	.main-navigation .page_item_has_children > a {
+		padding-right: 2em;
+		background: rgba(255, 255, 255, 0.1);
+	}
+	.main-navigation ul {
+		display: block;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	.main-navigation ul ul {
+		-ms-flex-direction: column;
+		    flex-direction: column;
+		background: rgba(255, 255, 255, 0.1);
+		margin-left: 0;
+	}
+	.main-navigation ul ul li {
+		padding-left: 0;
+	}
+	.main-navigation ul ul li a {
+		width: 218px;
+		background: none;
+	}
+	.main-navigation ul li a {
+		padding: .4em 1em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.main-navigation ul {
+		-ms-flex-pack: end;
+		    justify-content: flex-end;
+		padding-top: 0;
+		/* If you want dropdowns to open on hover, uncomment this: */
+		/*
+			li:hover > ul,
+				li:focus > ul {
+				display: block;
+			}
+			*/
+	}
+}
+
+.main-navigation {
+	display: block;
+	font-family: sans-serif;
+	font-weight: 400;
+	clear: left;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-top: 1em;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	display: none;
+	top: 1.5em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	top: 0;
+}
+
+.main-navigation ul ul li {
+	padding-left: 1em;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: inline-block;
+	width: 100%;
+	padding: .5em 1em .5em 0;
+	text-decoration: none;
+	color: #fff;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	text-decoration: underline;
+}
+
+.main-navigation .menu-item-has-children,
+.main-navigation .page_item_has_children {
+	min-width: 218px;
+}
+
+.main-navigation .menu-item-has-children > a,
+.main-navigation .page_item_has_children > a {
+	padding-right: 2em;
+}
+
+button.dropdown-toggle {
+	position: absolute;
+	right: 0;
+	border: none;
+	background: inherit;
+	color: white;
+	line-height: 1em;
+	padding: .5em 1em;
+}
+
+button.dropdown-toggle span {
+	font-weight: 700;
+	font-size: 1.3em;
+	opacity: .7;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	margin: 1.2em 1.2em 0 0;
+	padding: .6em .8em;
+	font-size: 80%;
+	text-transform: uppercase;
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Toggle small menu and children on */
+.toggled-on ul,
+.children.toggled-on,
+.sub-menu.toggled-on {
+	display: block;
+}
+
+@media screen and (min-width: 600px) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation .menu-item-has-children > a,
+	.main-navigation .page_item_has_children > a {
+		padding-right: 2em;
+		background: rgba(255, 255, 255, 0.1);
+	}
+	.main-navigation ul {
+		display: block;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	.main-navigation ul ul {
+		-ms-flex-direction: column;
+		    flex-direction: column;
+		background: rgba(255, 255, 255, 0.1);
+		margin-left: 0;
+	}
+	.main-navigation ul ul li {
+		padding-left: 0;
+	}
+	.main-navigation ul ul li a {
+		width: 218px;
+		background: none;
+	}
+	.main-navigation ul li a {
+		padding: .4em 1em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.main-navigation ul {
+		-ms-flex-pack: end;
+		    justify-content: flex-end;
+		padding-top: 0;
+		/* If you want dropdowns to open on hover, uncomment this: */
+		/*
+			li:hover > ul,
+				li:focus > ul {
+				display: block;
+			}
+			*/
+	}
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 .sticky {
 	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.entry-header {
+	font-family: sans-serif;
+}
+
+.cat-links {
+	font-size: 90%;
+	font-weight: 700;
+}
+
+.cat-links a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #F6CAC9;
+}
+
+.cat-links a:focus, .cat-links a:hover {
+	background-color: #F6CAC9;
+	color: white;
+	transition: all .4s ease;
 }
 
 .post,
@@ -865,6 +1337,48 @@ a:hover, a:active {
 
 .bypostauthor {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+## footer
+--------------------------------------------------------------*/
+.site-info {
+	height: 150px;
+	width: 100%;
+	background: #91A7D0;
+	text-align: center;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
+}
+
+ul#footer-menu {
+	list-style-type: none;
+	padding-top: 35px;
+}
+
+ul#footer-menu li {
+	display: inline-block;
+	padding-right: 20px;
+}
+
+.site-info__desc {
+	padding-bottom: 10px;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -921,11 +1435,37 @@ object {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: .5em 0 1.5em 1em;
+}
+
+@media screen and (min-width: 600px) {
+	.wp-caption .wp-caption-text {
+		margin-left: 2em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.wp-caption .wp-caption-text {
+		margin-left: 0;
+	}
 }
 
 .wp-caption-text {
 	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Images
+--------------------------------------------------------------*/
+.wp-caption.aligncenter, .centered-image {
+	max-width: 100vw;
+	margin: 0 -1.5em;
+}
+
+@media sceen and (min-width: 600px) {
+	.wp-caption.aligncenter, .centered-image {
+		margin: 0 -2em;
+	}
 }
 
 /*--------------------------------------------------------------

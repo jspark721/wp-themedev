@@ -2,6 +2,29 @@
 	display: block;
 }
 
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.entry-header {
+	font-family: $font__main;
+}
+
+.cat-links {
+	font-size: 90%;
+	font-weight: 700;
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: $color__secondary;
+		&:focus,
+			&:hover {
+				background-color: $color__secondary;
+				color: white;
+				transition: all .4s ease;
+			}
+	}
+}
 .post,
 .page {
 	margin: 0 0 1.5em;
