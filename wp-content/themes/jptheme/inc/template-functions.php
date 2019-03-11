@@ -22,6 +22,13 @@ function jptheme_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// Add a class telling us if the sidebar is in use
+	if ( is_active_sidebar( 'sidebar-1') ) {
+		$classes[] = 'has-sidebar';
+	} else {
+		$classes[] = 'no-widebar';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'jptheme_body_classes' );
